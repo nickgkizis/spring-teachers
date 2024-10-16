@@ -7,14 +7,13 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Setter
+@AllArgsConstructor
 @Getter
+@Setter
 @Builder
 @Table(name = "teachers")
 public class Teacher extends AbstractEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,7 +24,6 @@ public class Teacher extends AbstractEntity {
     @Column(unique = true)
     private String vat;
 
-
     private String firstname;
     private String lastname;
 
@@ -33,9 +31,8 @@ public class Teacher extends AbstractEntity {
     @JoinColumn(name = "region_id")
     private Region region;
 
-//    random string 128 bits
     @PrePersist
-    public void initializeUUID(){
-        if(uuid==null) uuid = UUID.randomUUID().toString();
+    public void initializeUUID() {
+        if (uuid == null) uuid = UUID.randomUUID().toString();
     }
 }

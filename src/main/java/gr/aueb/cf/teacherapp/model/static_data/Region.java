@@ -1,24 +1,27 @@
 package gr.aueb.cf.teacherapp.model.static_data;
 
-import gr.aueb.cf.teacherapp.model.AbstractEntity;
+import gr.aueb.cf.teacherapp.TeacherApplication;
 import gr.aueb.cf.teacherapp.model.Teacher;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@Table(name="regions")
+@Table(name = "regions")
 public class Region {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
 
     @Getter(AccessLevel.PRIVATE)
@@ -29,6 +32,7 @@ public class Region {
         if (teachers == null) teachers = new HashSet<>();
         return Collections.unmodifiableSet(teachers);
     }
+
     public void addTeacher(Teacher teacher) {
         if (teachers == null) teachers = new HashSet<>();
         teachers.add(teacher);

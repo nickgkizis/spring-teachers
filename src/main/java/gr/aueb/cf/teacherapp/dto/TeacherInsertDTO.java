@@ -3,7 +3,10 @@ package gr.aueb.cf.teacherapp.dto;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,18 +14,17 @@ import lombok.*;
 @Setter
 public class TeacherInsertDTO {
 
-    @NotNull(message = "first name can not be null.")
-    @Size(min=2, message = "firstname must be at least 2")
+    @NotNull(message = "Firstname can not ne null.")
+    @Size(min = 2, message = "Firstname must be at least 2 characters long.")
     private String firstname;
 
-    @NotNull(message = "last name can not be null.")
-    @Size(min=2, message = "lastname must be at least 2")
+    @NotNull(message = "Lastname can not ne null.")
+    @Size(min = 2, message = "Lastname must be at least 2 characters long.")
     private String lastname;
 
-    @Pattern(regexp = "\\d{9,}", message = "vat must be at least 9 char long")
+    @Pattern(regexp = "\\d{9,}", message = "Vat must be at least 9 digits long.")
     private String vat;
 
-    @NotNull(message = "region must not be null")
+    @NotNull(message = "Region must not be null.")
     private Long regionId;
-
 }

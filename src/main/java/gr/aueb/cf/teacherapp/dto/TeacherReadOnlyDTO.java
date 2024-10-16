@@ -1,6 +1,5 @@
 package gr.aueb.cf.teacherapp.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,9 +16,8 @@ public class TeacherReadOnlyDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String uuid;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String vat;
     private String region;
-
 }
